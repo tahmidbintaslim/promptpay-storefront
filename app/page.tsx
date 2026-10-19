@@ -1,66 +1,87 @@
-import React from 'react';
+const repoUrl = "https://github.com/tahmidbintaslim/promptpay-storefront";
 
-export default function LandingPage() {
-  const checkoutUrl = "https://checkout.freemius.com/v2/..."; // Insert your generated dashboard link here
+const status = [
+  "Not released. There is no download, no price and no checkout.",
+  "This repository holds this page only. No plugin code is public yet.",
+  "There is no release date.",
+];
 
+const planned = [
+  "Show a PromptPay QR code (EMVCo format) set to the exact order total.",
+  "Let the customer upload a transfer slip on the order page.",
+  "Optionally check each slip with a verification service such as SlipOK or EasySlip, using the store's own account.",
+  "Reject a slip that was already used for another order.",
+  "Update the WooCommerce order status after a slip passes the check.",
+];
+
+export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
-      {/* Hero Section */}
-      <header className="max-w-5xl mx-auto pt-20 pb-16 px-6 text-center">
-        <span className="bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full">
-          For Thai WooCommerce Stores 🚀
-        </span>
-        <h1 className="text-5xl font-extrabold tracking-tight mt-6 mb-6 text-slate-900 sm:text-6xl">
-          Automate Your PromptPay <br />
-          <span className="text-blue-600">Slip Verification</span>
-        </h1>
-        <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Stop cross-checking bank accounts manually. Instantly verify bank slips, catch fake screenshots, and clear orders using our secure API-driven gateway plugin.
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans flex flex-col">
+      <main className="flex-1 max-w-3xl w-full mx-auto px-6 pt-20 pb-16">
+        <header>
+          <p className="inline-block bg-amber-100 text-amber-900 text-sm font-semibold px-4 py-1.5 rounded-full">
+            In development
+          </p>
+          <h1 className="text-4xl font-extrabold tracking-tight mt-6 mb-6 sm:text-5xl">
+            PromptPay Flow
+          </h1>
+          <p className="text-xl text-slate-700 leading-relaxed">
+            A planned WooCommerce plugin for stores in Thailand. Customers
+            pay the order total by PromptPay QR and upload their transfer
+            slip, and the store checks the slip before the order moves on.
+          </p>
+        </header>
+
+        <section aria-labelledby="status-heading" className="mt-14">
+          <h2 id="status-heading" className="text-2xl font-bold">
+            Current status
+          </h2>
+          <ul className="mt-4 space-y-2 list-disc pl-6 text-slate-700">
+            {status.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section aria-labelledby="planned-heading" className="mt-12">
+          <h2 id="planned-heading" className="text-2xl font-bold">
+            What it will do
+          </h2>
+          <ul className="mt-4 space-y-2 list-disc pl-6 text-slate-700">
+            {planned.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p className="mt-4 text-slate-700">
+            These are plans, not finished features. They may change before a
+            release.
+          </p>
+        </section>
+
+        <section aria-labelledby="follow-heading" className="mt-12">
+          <h2 id="follow-heading" className="text-2xl font-bold">
+            Follow along
+          </h2>
+          <p className="mt-4 text-slate-700">
+            Watch the repository on GitHub to see updates and any future
+            release.
+          </p>
+          <a
+            href={repoUrl}
+            className="mt-6 inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+          >
+            Follow on GitHub
+          </a>
+        </section>
+      </main>
+
+      <footer className="border-t border-slate-200">
+        <p className="max-w-3xl mx-auto px-6 py-8 text-sm text-slate-700">
+          PromptPay Flow is an independent project. It is not affiliated
+          with, or endorsed by, the Bank of Thailand, PromptPay, WooCommerce,
+          SlipOK or EasySlip. Product names belong to their owners.
         </p>
-      </header>
-
-      {/* Pricing Module */}
-      <section className="max-w-4xl mx-auto px-6 pb-24">
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
-          {/* Free Tier Details */}
-          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-            <div>
-              <h3 className="text-xl font-bold text-slate-800">Core Engine</h3>
-              <p className="text-slate-500 mt-2 text-sm">Perfect for hobbyists and early-stage shops.</p>
-              <div className="text-4xl font-extrabold mt-6 mb-6">0 THB <span className="text-sm font-normal text-slate-400">/ forever</span></div>
-              <ul className="space-y-3.5 text-slate-600 text-sm border-t border-slate-100 pt-6">
-                <li className="flex items-center">✓ Dynamic EMVCo QR Code Generation</li>
-                <li className="flex items-center">✓ Exact Order Amount Binding</li>
-                <li className="flex items-center">✓ Manual Customer Slip Upload Field</li>
-              </ul>
-            </div>
-            <a href="https://wordpress.org/plugins/..." className="mt-8 block w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-3 px-4 rounded-xl transition">
-              Download via WP.org
-            </a>
-          </div>
-
-          {/* Pro Tier Details */}
-          <div className="bg-white p-8 rounded-2xl border-2 border-blue-600 shadow-xl relative flex flex-col justify-between">
-            <span className="absolute -top-3 right-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-              Most Popular
-            </span>
-            <div>
-              <h3 className="text-xl font-bold text-slate-800">Professional Automation</h3>
-              <p className="text-slate-500 mt-2 text-sm">For growing brands processing daily volumes.</p>
-              <div className="text-4xl font-extrabold mt-6 mb-6">$59 USD <span className="text-sm font-normal text-slate-400">/ year (~1,950 THB)</span></div>
-              <ul className="space-y-3.5 text-slate-600 text-sm border-t border-blue-50 pt-6">
-                <li className="flex items-center font-medium text-blue-700">✓ Real-time API Slip Verification (Slipok/EasySlip)</li>
-                <li className="flex items-center">✓ Instant Automated WooCommerce Status Updates</li>
-                <li className="flex items-center">✓ Duplicate Slip Reuse / Fraud Protection Locks</li>
-                <li className="flex items-center">✓ Automated Background Plugin Core Updates</li>
-              </ul>
-            </div>
-            <a href={checkoutUrl} className="mt-8 block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl shadow-md transition">
-              Get Instant Pro Access
-            </a>
-          </div>
-        </div>
-      </section>
+      </footer>
     </div>
   );
 }
