@@ -26,9 +26,10 @@ export default function Home() {
             PromptPay Flow
           </h1>
           <p className="text-xl text-slate-700 leading-relaxed">
-            A planned WooCommerce plugin for stores in Thailand. Customers
-            pay the order total by PromptPay QR and upload their transfer
-            slip, and the store checks the slip before the order moves on.
+            A planned WooCommerce plugin for stores in Thailand. The plan is
+            for customers to pay the order total by PromptPay QR and upload
+            their transfer slip, so the store can check the slip before the
+            order moves on.
           </p>
         </header>
 
@@ -63,8 +64,7 @@ export default function Home() {
             Follow along
           </h2>
           <p className="mt-4 text-slate-700">
-            Watch the repository on GitHub to see updates and any future
-            release.
+            Watch the repository on GitHub for updates.
           </p>
           <a
             href={repoUrl}
