@@ -47,4 +47,4 @@ EasySlip. Product names belong to their owners.
 
 ## License
 
-This repository does not have a license yet.
+MIT. See [LICENSE](LICENSE). It covers this landing page only; the planned WordPress plugin will need its own license (GPLv2 or later) if it is released.
