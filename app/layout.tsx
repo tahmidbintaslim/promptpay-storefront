@@ -13,8 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PromptPay Flow - Automated Slip Verification for WooCommerce",
-  description: "Accept fee-free direct bank transfers in WooCommerce with automated PromptPay slip verification and EMVCo dynamic QR codes.",
+  title: "PromptPay Flow (in development)",
+  description:
+    "A planned WooCommerce plugin for PromptPay QR payments and slip checks in Thai stores. In development and not released.",
+  // Keep the page out of search results until the plugin is released.
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
