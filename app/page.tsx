@@ -1,8 +1,10 @@
+import { QrBuilder } from "./qr-builder";
+
 const repoUrl = "https://github.com/tahmidbintaslim/promptpay-storefront";
 
 const status = [
   "Not released. There is no download, no price and no checkout.",
-  "This repository holds this page only. No plugin code is public yet.",
+  "This repository holds this page and a preview of the plugin's QR step. The rest of the plugin is not public yet.",
   "There is no release date.",
 ];
 
@@ -57,6 +59,18 @@ export default function Home() {
             These are plans, not finished features. They may change before a
             release.
           </p>
+        </section>
+
+        <section aria-labelledby="preview-heading" className="mt-12">
+          <h2 id="preview-heading" className="text-2xl font-bold">
+            Try the QR step
+          </h2>
+          <p className="mt-4 text-slate-700">
+            The first piece of the plugin: the QR code a customer would scan
+            for an order. It is built in your browser and nothing is sent
+            anywhere. Slip upload and checks are not built yet.
+          </p>
+          <QrBuilder />
         </section>
 
         <section aria-labelledby="follow-heading" className="mt-12">
