@@ -1,0 +1,48 @@
+name: Bug report
+description: Something on the page or in the QR preview does not work as described.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please check [Known limitations](https://github.com/tahmidbintaslim/promptpay-storefront#known-limitations) first: slip upload and slip checks are not built yet.
+        For a security problem, do not use this form. Follow SECURITY.md instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect to see?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: For a QR problem, include the ID type (mobile or 13-digit ID) and the amount, but not your real PromptPay ID.
+      placeholder: |
+        1. Open the live page
+        2. Enter ...
+        3. See ...
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did it happen?
+      options:
+        - Live page (promptpay-storefront.vercel.app)
+        - Local dev server (npm run dev)
+        - Local production build (npm run demo)
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and OS, or banking app
+      placeholder: Chrome 140 on macOS, or the banking app that rejected the QR
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Browser console output, terminal output or screenshots.
+      render: text
